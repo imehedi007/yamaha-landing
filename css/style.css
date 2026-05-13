@@ -219,6 +219,7 @@ h6 {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-decoration: none;
     cursor: pointer;
     transition: var(--transition-normal);
     border: none;
