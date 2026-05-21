@@ -100,11 +100,11 @@ class MainFooter extends HTMLElement {
 // Custom Head Component to dynamically inject common <head> elements
 class MainHead extends HTMLElement {
     connectedCallback() {
-        const title = this.getAttribute('title') || 'See yourself in a Yamaverse';
-        const description = this.getAttribute('description') || 'Enter the Yamaverse and discover your AI-generated persona.';
+        const title = this.getAttribute('title') || document.title || 'See yourself in a Yamaverse';
+        const description = this.getAttribute('description') || (document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').getAttribute('content') : '') || 'Enter the Yamaverse and discover your AI-generated persona.';
         const extraCss = this.getAttribute('extra-css') || '';
-        const image = this.getAttribute('image') || 'assets/Yamaha_Persona-1.jpg';
-        const url = this.getAttribute('url') || window.location.href;
+        const image = this.getAttribute('image') || (document.querySelector('meta[property="og:image"]') ? document.querySelector('meta[property="og:image"]').getAttribute('content') : '') || 'assets/Yamaha_Persona-1.jpg';
+        const url = this.getAttribute('url') || (document.querySelector('meta[property="og:url"]') ? document.querySelector('meta[property="og:url"]').getAttribute('content') : '') || window.location.href;
 
         // Resolve absolute URL for the image (social cards/scrapers require absolute URLs)
         let absoluteImageUrl = image;
@@ -124,9 +124,11 @@ class MainHead extends HTMLElement {
         if (!descMeta) {
             descMeta = document.createElement('meta');
             descMeta.name = 'description';
+            descMeta.content = description;
             document.head.appendChild(descMeta);
+        } else {
+            descMeta.setAttribute('content', description);
         }
-        descMeta.content = description;
 
         // Define all common head tags, including Open Graph (Facebook/LinkedIn) and Twitter Cards
         const headTags = [
