@@ -103,6 +103,18 @@ class MainHead extends HTMLElement {
         const title = this.getAttribute('title') || 'See yourself in a Yamaverse';
         const description = this.getAttribute('description') || 'Enter the Yamaverse and discover your AI-generated persona.';
         const extraCss = this.getAttribute('extra-css') || '';
+        const image = this.getAttribute('image') || 'assets/Yamaha_Persona-1.jpg';
+        const url = this.getAttribute('url') || window.location.href;
+
+        // Resolve absolute URL for the image (social cards/scrapers require absolute URLs)
+        let absoluteImageUrl = image;
+        if (image && !image.startsWith('http://') && !image.startsWith('https://')) {
+            try {
+                absoluteImageUrl = new URL(image, window.location.href).href;
+            } catch (e) {
+                absoluteImageUrl = window.location.origin + '/' + image;
+            }
+        }
 
         // Set Document Title
         document.title = title;
@@ -116,7 +128,7 @@ class MainHead extends HTMLElement {
         }
         descMeta.content = description;
 
-        // Define all common head tags
+        // Define all common head tags, including Open Graph (Facebook/LinkedIn) and Twitter Cards
         const headTags = [
             { tag: 'meta', attrs: { charset: 'UTF-8' } },
             { tag: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1.0' } },
@@ -128,7 +140,21 @@ class MainHead extends HTMLElement {
             { tag: 'link', attrs: { rel: 'icon', href: 'icons/yamaverse-favicon.svg', type: 'image/svg+xml' } },
             { tag: 'link', attrs: { rel: 'apple-touch-icon', href: 'icons/yamaverse-icon-180.png' } },
             { tag: 'link', attrs: { rel: 'manifest', href: 'site.webmanifest' } },
-            { tag: 'meta', attrs: { name: 'theme-color', content: '#050818' } }
+            { tag: 'meta', attrs: { name: 'theme-color', content: '#050818' } },
+
+            // Open Graph / Facebook / Instagram / LinkedIn
+            { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+            { tag: 'meta', attrs: { property: 'og:site_name', content: 'Yamaverse' } },
+            { tag: 'meta', attrs: { property: 'og:title', content: title } },
+            { tag: 'meta', attrs: { property: 'og:description', content: description } },
+            { tag: 'meta', attrs: { property: 'og:url', content: url } },
+            { tag: 'meta', attrs: { property: 'og:image', content: absoluteImageUrl } },
+
+            // Twitter Cards
+            { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+            { tag: 'meta', attrs: { name: 'twitter:title', content: title } },
+            { tag: 'meta', attrs: { name: 'twitter:description', content: description } },
+            { tag: 'meta', attrs: { name: 'twitter:image', content: absoluteImageUrl } }
         ];
 
         // Append common tags to document.head if they don't already exist
@@ -138,6 +164,8 @@ class MainHead extends HTMLElement {
                 selector += `[href="${item.attrs.href}"]`;
             } else if (item.attrs.name) {
                 selector += `[name="${item.attrs.name}"]`;
+            } else if (item.attrs.property) {
+                selector += `[property="${item.attrs.property}"]`;
             } else if (item.attrs.charset) {
                 selector += `[charset="${item.attrs.charset}"]`;
             }
