@@ -46,8 +46,7 @@ class MainFooter extends HTMLElement {
                 <div class="container footer-container">
                     <div class="footer-top">
                         <div class="footer-brand">
-                            <div class="logo">
-                                YAMA<span class="logo-accent">VERSE</span>
+                            <div class="logo">YAMA<span class="logo-accent">VERSE</span>
                             </div>
                             <p class="footer-tagline">Rev Your Heart in the Digital Age. Discover your perfect AI persona.</p>
                         </div>
