@@ -59,7 +59,7 @@ class MainFooter extends HTMLElement {
                             </ul>
                         </div>
                         <div class="footer-social">
-                            <h4>Connect with Yamaha Bangladesh</h4>
+                            <h4>Connect with Yamaha Motorcycles Bangladesh - ACI Motors</h4>
                             <div class="social-links">
                                 <a href="https://www.facebook.com/Yamahabd/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"

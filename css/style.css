@@ -803,8 +803,8 @@ h6 {
 
 .footer-top {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.5fr 1fr 1.8fr;
+    gap: clamp(2rem, 4vw, 4rem);
     margin-bottom: 3rem;
 }
 
@@ -821,6 +821,11 @@ h6 {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
     color: white;
+}
+
+.footer-social h4 {
+    line-height: 1.4;
+    font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
 .footer-nav ul {
@@ -949,6 +954,15 @@ h6 {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
 }
 
 @media (max-width: 768px) {
@@ -998,6 +1012,10 @@ h6 {
     .footer-top {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: auto;
     }
 
     .style-1 {
