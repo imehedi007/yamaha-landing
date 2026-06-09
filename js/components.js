@@ -11,8 +11,8 @@ class MainNavbar extends HTMLElement {
             <header class="navbar">
                 <div class="container nav-container">
                     <div class="logo">
-                        <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
-                            YAMA<span class="logo-accent">VERSE</span>
+                        <a href="index.html" style="text-decoration: none; color: inherit; display: inline-block;">
+                            YAMAHA FIFA<span class="logo-accent"> FOOTBALL CHARACTER</span>
                         </a>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ class MainFooter extends HTMLElement {
                 <div class="container footer-container">
                     <div class="footer-top">
                         <div class="footer-brand">
-                            <div class="logo">YAMA<span class="logo-accent">VERSE</span>
+                            <div class="logo">YAMAHA FIFA<span class="logo-accent"> FOOTBALL CHARACTER</span>
                             </div>
                             <p class="footer-tagline">Rev Your Heart in the Digital Age. Discover your perfect AI persona.</p>
                         </div>

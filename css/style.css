@@ -175,8 +175,8 @@ h6 {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+    display: inline-block;
+    text-align: center;
     font-family: var(--font-heading);
     font-weight: 900;
     font-size: 1.7rem;
@@ -813,6 +813,10 @@ h6 {
     margin-top: 1rem;
     max-width: 300px;
     font-size: 0.9rem;
+}
+
+.footer .logo {
+    text-align: left;
 }
 
 .footer-nav h4,
