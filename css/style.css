@@ -1164,7 +1164,13 @@ h6 {
 }
 
 [data-theme="light"] .step-number {
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.05);
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .step-card:hover .step-number {
+    -webkit-text-stroke: 1px var(--primary);
+    color: rgba(0, 35, 255, 0.08);
 }
 
 [data-theme="light"] .footer {
