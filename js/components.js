@@ -136,7 +136,7 @@ class MainHead extends HTMLElement {
         const title = this.getAttribute('title') || document.title || 'See yourself in a Yamaverse';
         const description = this.getAttribute('description') || (document.querySelector('meta[name="description"]') ? document.querySelector('meta[name="description"]').getAttribute('content') : '') || 'Enter the Yamaverse and discover your AI-generated persona.';
         const extraCss = this.getAttribute('extra-css') || '';
-        const image = this.getAttribute('image') || (document.querySelector('meta[property="og:image"]') ? document.querySelector('meta[property="og:image"]').getAttribute('content') : '') || 'assets/Yamaha_Persona-1.jpg';
+        const image = this.getAttribute('image') || (document.querySelector('meta[property="og:image"]') ? document.querySelector('meta[property="og:image"]').getAttribute('content') : '') || 'assets/Yamaha_Persona-1.webp';
         const url = this.getAttribute('url') || (document.querySelector('meta[property="og:url"]') ? document.querySelector('meta[property="og:url"]').getAttribute('content') : '') || window.location.href;
 
         // Resolve absolute URL for the image (social cards/scrapers require absolute URLs)
