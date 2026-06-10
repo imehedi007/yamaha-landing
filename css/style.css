@@ -28,8 +28,8 @@
 [data-theme="light"] {
     --bg-dark: #f5f6fa;
     --bg-surface: #ffffff;
-    --bg-card: rgba(240, 242, 248, 0.7);
-    --bg-card-hover: rgba(230, 234, 245, 0.9);
+    --bg-card: rgba(255, 255, 255, 0.75);
+    --bg-card-hover: rgba(255, 255, 255, 0.9);
     --text-primary: #0a0a0c;
     --text-secondary: #5f6368;
     --border-color: rgba(0, 0, 0, 0.08);
@@ -1203,6 +1203,14 @@ h6 {
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .glass-panel {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), 0 1px 8px rgba(0, 0, 0, 0.01);
+}
+
+[data-theme="light"] .step-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 35, 255, 0.06), 0 1px 10px rgba(0, 35, 255, 0.02);
 }
 
 /* Theme Toggle Button Styles */
