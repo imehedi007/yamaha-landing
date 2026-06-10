@@ -1210,7 +1210,7 @@ h6 {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: rgba(10, 12, 16, 0.8);
+    background: rgba(100, 116, 139, 0.25);
     border: 1px solid var(--border-color);
     color: var(--text-main);
     width: 48px;
@@ -1224,23 +1224,23 @@ h6 {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     z-index: 999;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .theme-toggle-btn:hover {
-    background: rgba(10, 12, 16, 0.95);
+    background: rgba(100, 116, 139, 0.4);
     border-color: var(--cyan);
     box-shadow: 0 0 20px var(--cyan-glow);
     transform: translateY(-3px);
 }
 
 [data-theme="light"] .theme-toggle-btn {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(100, 116, 139, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="light"] .theme-toggle-btn:hover {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(100, 116, 139, 0.35);
     border-color: var(--primary);
     box-shadow: 0 0 20px var(--primary-glow);
 }
