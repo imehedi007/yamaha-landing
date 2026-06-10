@@ -58,7 +58,7 @@ class MainNavbar extends HTMLElement {
         const toggleBtn = this.querySelector('#theme-toggle');
         if (toggleBtn) {
             toggleBtn.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+                const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
                 const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
@@ -130,7 +130,7 @@ class MainFooter extends HTMLElement {
 class MainHead extends HTMLElement {
     connectedCallback() {
         // Load and apply theme immediately to avoid page flash
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
 
         const title = this.getAttribute('title') || document.title || 'See yourself in a Yamaverse';
@@ -175,7 +175,7 @@ class MainHead extends HTMLElement {
             { tag: 'link', attrs: { rel: 'icon', href: 'icons/yamaverse-favicon.svg', type: 'image/svg+xml' } },
             { tag: 'link', attrs: { rel: 'apple-touch-icon', href: 'icons/yamaverse-icon-180.png' } },
             { tag: 'link', attrs: { rel: 'manifest', href: 'site.webmanifest' } },
-            { tag: 'meta', attrs: { name: 'theme-color', content: '#050818' } },
+            { tag: 'meta', attrs: { name: 'theme-color', content: savedTheme === 'dark' ? '#050818' : '#f5f6fa' } },
 
             // Open Graph / Facebook / Instagram / LinkedIn
             { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
